@@ -63,7 +63,7 @@ public class CountryService {
 
     public Optional<Country> delete(int id) {
         Optional<Country> countryToDelete = findById(id);
-        countryToDelete.ifPresent(this.countries::remove);
+        countryToDelete.ifPresent(o -> this.countries.remove(o));
         return countryToDelete;
 
     }
